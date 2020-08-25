@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.isc517final.microservices'
+group = 'com.isc517final'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -23,14 +23,12 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-web-services'
-	implementation 'io.jsonwebtoken:jjwt:0.9.1'
-	implementation 'com.googlecode.json-simple:json-simple:1.1'
-	implementation 'com.h2database:h2:1.4.191'
+	implementation 'org.springframework.session:spring-session-core'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
-	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'

@@ -3,6 +3,8 @@ package com.isc517final.microservices.users.Models;
 import javax.persistence.*;
 import org.json.simple.JSONObject;
 
+@Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -95,6 +97,7 @@ public class User {
         json.put("id", this.id);
         json.put("name", this.name);
         json.put("email", this.email);
+        json.put("password", this.password);
         json.put("active", this.active);
         json.put("role", this.role);
 
