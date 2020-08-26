@@ -133,6 +133,7 @@ const Header = ({ sidebarStatus = false, handleSidebarOpen, handleSidebarClose }
   return (
     <div className={classes.grow}>
       <AppBar
+        style={{ background: '#EE2329' }}
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: sidebarStatus,
@@ -146,7 +147,7 @@ const Header = ({ sidebarStatus = false, handleSidebarOpen, handleSidebarClose }
           )}
 
           <Typography className={classes.title} variant="h6" noWrap>
-            Multimedia Events
+            Lyriad Events
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>

@@ -13,6 +13,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import ShopIcon from '@material-ui/icons/Shop';
 
 const drawerWidth = 240;
 
@@ -107,7 +108,7 @@ const Sidebar = ({ open = false, handleSidebarClose }) => {
         <List>
           {clientsMenu.map((item, index) => (
             <ListItem button component="a" key={item.id} href={item.url}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon>{index % 2 === 0 ? <ShopIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={item.title} />
             </ListItem>
           ))}
@@ -116,7 +117,7 @@ const Sidebar = ({ open = false, handleSidebarClose }) => {
         <List>
           {employeesMenu.map((item, index) => (
             <ListItem button component="a" key={item.id} href={item.url}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon>{index % 2 === 0 ? <ShopIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={item.title} />
             </ListItem>
           ))}

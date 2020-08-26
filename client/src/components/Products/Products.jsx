@@ -63,7 +63,7 @@ const Products = () => {
       {!paidFor ? (
         <div>
           <Typography className={classes.title} variant="h6" gutterBottom>
-            Seleccione los productos que desea adquirir
+            Productos Disponibles:
           </Typography>
           {productsList.map((product) => (
             <div className={classes.container}>
