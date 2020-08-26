@@ -1,0 +1,94 @@
+version: "3.8"
+
+services:
+    conf-server:
+        container_name: conf-server
+        build: ./configuration
+        ports:
+          - "8888:8888"
+        networks:
+          - isc517-final-main-network
+        restart: always
+
+    eureka-server:
+        container_name: eureka-server
+        build: ./eureka
+        restart: always
+        ports:
+            - "8761:8761"
+        networks:
+            - isc517-final-main-network
+        depends_on:
+            - conf-server
+        restart: always
+
+    gateway-server:
+        container_name: gateway-server
+        build: ./gateway
+        restart: always
+        ports:
+            - "8080:8080"
+        networks:
+            - isc517-final-main-network
+        depends_on:
+            - eureka-server
+        restart: always
+    
+    users-microservice-database:
+        container_name: users-microservice-database
+        image: mysql:latest
+        ports:
+            - "3699:3306"
+        networks:
+            - isc517-final-main-network
+        volumes:
+            - /data/users/mysql
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ROOT_PASSWORD=123456
+            - MYSQL_DATABASE=isc517_users
+
+    users-microservice-app:
+        build: ./users
+        depends_on:
+            - users-microservice-database
+        ports:
+            - "3698:3698"
+        volumes:
+            - /data/users/app
+        networks:
+            - isc517-final-main-network
+        restart: always
+
+    events-microservice-database:
+        container_name: events-microservice-database
+        image: mysql:latest
+        ports:
+            - "7453:3306"
+        networks:
+            - isc517-final-main-network
+        volumes:
+            - /data/events/mysql
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ROOT_PASSWORD=123456
+            - MYSQL_DATABASE=isc517_events
+
+    events-microservice-app:
+        build: ./events
+        depends_on:
+            - events-microservice-database
+        ports:
+            - "7452:7452"
+        volumes:
+            - /data/events/app
+        networks:
+            - isc517-final-main-network
+        restart: always
+
+volumes:
+    data:
+
+networks:
+    isc517-final-main-network:
+        driver: bridge
