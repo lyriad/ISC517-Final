@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     marginLeft: "8px",
   },
   added: {
-    color: "green",
+    color: "blue",
     fontWeight: "bold",
     paddingLeft: "60px",
   },
@@ -49,11 +49,11 @@ const ProductCard = ({ product = {}, addToCart, removeFromCart }) => {
   return (
     <Card className={cardClasses} onClick={onSelect}>
       <CardActionArea>
+        <Typography gutterBottom variant="h5" component="h2">
+          {product.name}
+        </Typography>
         <CardMedia className={classes.media} image={product.image} title={product.title} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {product.name}
-          </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {product.description}
           </Typography>

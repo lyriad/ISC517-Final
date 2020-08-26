@@ -50,10 +50,10 @@ const Products = () => {
   };
 
   const productsList = [
-    { id: 1, name: "Pre-Boda", image: "../../assets/pre-wedding.jpg", price: 1000 },
-    { id: 2, name: "Boda", image: "../../assets/wedding.jpg", price: 5000 },
     { id: 3, name: "Cumpleaños", image: "../../assets/birthday.jpg", price: 3000 },
     { id: 4, name: "Video de evento", image: "../../assets/video-event.jpg", price: 4000 },
+    { id: 1, name: "Pre-Boda", image: "../../assets/pre-boda.jpg", price: 1000 },
+    { id: 2, name: "Boda", image: "../../assets/boda.jpg", price: 5000 },
   ];
 
   const paymentButtonVisibility = cart.length === 0 ? `${classes.paymentButton} ${classes.hidePaymentButton}` : classes.paymentButton;
@@ -73,12 +73,12 @@ const Products = () => {
           <div className={paymentButtonVisibility}>
             <PayButton amount={getTotalAmount()} />
           </div>
-          <Typography className={classes.title} variant="h6" gutterBottom>
-            Total Pesos: RD${getTotalAmount()*58}.00
-          </Typography>
-          <Typography className={classes.title} variant="h6" gutterBottom>
-            Total USD: &nbsp;&nbsp;&nbsp;US${getTotalAmount()}.00
-          </Typography>
+            <Typography className={classes.title} variant="h6" gutterBottom>
+              Total Pesos: RD${getTotalAmount()*58}.00
+            </Typography>
+            <Typography className={classes.title} variant="h6" gutterBottom>
+              Total USD: &nbsp;&nbsp;&nbsp;US${getTotalAmount()}.00
+            </Typography>
         </div>
       ) : (
         <Typography className={classes.title} variant="h6" gutterBottom>

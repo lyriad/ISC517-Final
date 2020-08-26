@@ -151,11 +151,6 @@ const Header = ({ sidebarStatus = false, handleSidebarOpen, handleSidebarClose }
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={1} color="secondary">
-                <ShoppingCartIcon />
-              </Badge>
-            </IconButton>
             <IconButton
               edge="end"
               aria-label="account of current user"
