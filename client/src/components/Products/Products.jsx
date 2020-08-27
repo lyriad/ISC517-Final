@@ -90,10 +90,3 @@ const Products = () => {
 };
 
 export default Products;
-
-/*
-            <Fade in>
-              <Button variant="contained" color="primary" disableElevation className={classes.paymentButton}>
-                Proceder con el pago
-              </Button>
-          </Fade>*/

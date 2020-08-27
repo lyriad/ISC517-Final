@@ -84,7 +84,6 @@ const Sidebar = ({ open = false, handleSidebarClose }) => {
 
   const employeesMenu = [
     { id: "3", title: "Solicitudes pendientes", url: "/solicitudes-pendientes" },
-    { id: "5", title: "Graficos", url: "/graficos" },
     { id: "5", title: "Crear Empleado", url: "/crear-empleado" },
   ];
 
